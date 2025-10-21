@@ -4,12 +4,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("1.Задача 1.2: Человек");
-            System.out.println("2.Задача 1.3: Имена");
-            System.out.println("3.Задача 2.4: Сотрудники и отделы");
-            System.out.println("4.Задача 3.4: Сотрудники и отделы(изменённое)");
-            System.out.println("5.Задача 4.5: Создаем Имена");
-            System.out.println("6.Задача 5.1: Пистолет стреляет");
+            System.out.println("1. Человек");
+            System.out.println("2. Имена");
+            System.out.println("3. Сотрудники и отделы");
+            System.out.println("4. Сотрудники и отделы(изменённое)");
+            System.out.println("5. Создаем Имена");
+            System.out.println("6. Пистолет стреляет");
             System.out.println("0 - Выход");
             System.out.print("Выберите задачу: ");
 
@@ -18,7 +18,7 @@ public class Main {
             switch (choice) {
                 case "1":
                     scanner.nextLine();
-                    System.out.println("Задача 1.2: Человек.");
+                    System.out.println("1. Человек.");
                     Person cleopatra = new Person("Клеопатра", 152);
                     Person pushkin = new Person();
                     pushkin.setName("Пушкин");
@@ -33,7 +33,7 @@ public class Main {
 
                 case "2":
                     scanner.nextLine();
-                    System.out.println("Задача 1.3: Имена.");
+                    System.out.println("2. Имена.");
                     Names cleopatra2 = new Names("Клеопатра");
                     Names pushkin2 = new Names("Пушкин", "Александр", "Сергеевич");
                     Names mayakovskiy2 = new Names("Маяковский", "Владимир");
@@ -60,7 +60,7 @@ public class Main {
 
                 case "4":
                     scanner.nextLine();
-                    System.out.println("Задача 3.4: Сотрудники и отделы. (c дополнением)");
+                    System.out.println("3. Сотрудники и отделы. (c дополнением)");
 
                     // отдел
                     Department2 itDepartment2 = new Department2("IT");
@@ -89,7 +89,7 @@ public class Main {
 
                 case "5":
                     scanner.nextLine();
-                    System.out.println("Задача 4.5: Создаем Имена.");
+                    System.out.println("4. Создаем Имена.");
                     CreatingName cleopatra3 = new CreatingName("Клеопатра");
                     CreatingName pushkin3 = new CreatingName("Александр", "Пушкин", "Сергеевич");
                     CreatingName mayakovskiy3 = new CreatingName("Владимир", "Маяковский");
@@ -102,6 +102,8 @@ public class Main {
                     break;
 
                 case "6":
+                    scanner.nextLine();
+                    System.out.println("5. Пистолет стреляет");
                     // Создаем пистолет с тремя патронами
                     Gun gun = new Gun(3);
                     System.out.println("Создан " + gun);
