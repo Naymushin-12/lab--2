@@ -1,17 +1,17 @@
-public class Employees2 { //Улучшенная версия класса сотрудника с поддержкой связанного списка
+public class Employees2 { // Улучшенная версия класса сотрудника с поддержкой связанного списка
     // Поля класса
-    private String name;           // Имя сотрудника
+    private String name; // Имя сотрудника
     private Department2 department; // Отдел сотрудника
-    Employees2 nextEmployee;       // Ссылка на следующего сотрудника в отделе
-    private boolean isManager;     // Флаг является ли сотрудник менеджером
+    Employees2 nextEmployee; // Ссылка на следующего сотрудника в отделе
+    private boolean isManager; // Флаг является ли сотрудник менеджером
 
-    public Employees2(String name, Department2 department) { //Конструктор для обычного сотрудника
+    public Employees2(String name, Department2 department) { // Конструктор для обычного сотрудника
         this.name = name;
         this.department = department;
         this.isManager = false; // По умолчанию не менеджер
     }
 
-    public Employees2(String name, Department2 department, boolean isManager) { //Конструктор с указанием роли
+    public Employees2(String name, Department2 department, boolean isManager) { // Конструктор с указанием роли
         this.name = name;
         this.department = department;
         this.isManager = isManager;
@@ -29,12 +29,11 @@ public class Employees2 { //Улучшенная версия класса со�
         return isManager;
     }
 
-
     public void setManager(boolean manager) {
         isManager = manager;
     }
 
-    public void printDepartmentEmployees() { //Вывод всех сотрудников отдела в консоль
+    public void printDepartmentEmployees() { // Вывод всех сотрудников отдела в консоль
         System.out.println("Все сотрудники отдела " + department.getTitle() + ":");
 
         // Выводим начальника первым (если он есть)
@@ -54,11 +53,11 @@ public class Employees2 { //Улучшенная версия класса со�
     }
 
     @Override
-    public String toString() { //Преобразование объекта в строку
-        if (isManager) {
+    public String toString() { // Преобразование объекта в строку
+        if (isManager) { // если менеджер
             return name + " начальник отдела " + department.getTitle();
         } else {
-            Employees2 manager = findDepartmentManager();
+            Employees2 manager = findDepartmentManager(); // ищем менеджера
             if (manager != null) {
                 return name + " работает в отделе " + department.getTitle() +
                         ", начальник которого " + manager.getName();
@@ -69,9 +68,9 @@ public class Employees2 { //Улучшенная версия класса со�
         }
     }
 
-    private Employees2 findDepartmentManager() { //спомогательный метод для поиска менеджера в отделе
-        Employees2 current = department.getFirstEmployee();
-        while (current != null) {
+    private Employees2 findDepartmentManager() { // вспомогательный метод для поиска менеджера в отделе
+        Employees2 current = department.getFirstEmployee(); // получаем нового сотрудника
+        while (current != null) { // цикл по всем сотрудникам
             if (current.isManager()) {
                 return current;
             }
