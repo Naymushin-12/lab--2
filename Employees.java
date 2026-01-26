@@ -1,16 +1,16 @@
-public class Employees { //Класс для представления сотрудника в организации
+public class Employees { // Класс для представления сотрудника в организации
     // Поля класса
-    private String name;           // Имя сотрудника
+    private String name; // Имя сотрудника
     private Department department; // Отдел сотрудника
-    private boolean isManager;     // Флаг является ли сотрудник менеджером
+    private boolean isManager; // Флаг является ли сотрудник менеджером
 
-    public Employees(String name, Department department) { //Конструктор для обычного сотрудника (не менеджера)
+    public Employees(String name, Department department) { // Конструктор для обычного сотрудника (не менеджера)
         this.name = name;
         this.department = department;
         this.isManager = false; // По умолчанию не менеджер
     }
 
-    public Employees(String name, Department department, boolean isManager) { //Конструктор с указанием роли сотрудника
+    public Employees(String name, Department department, boolean isManager) { // Конструктор с указанием роли сотрудника
         this.name = name;
         this.department = department;
         this.isManager = isManager;
@@ -41,11 +41,11 @@ public class Employees { //Класс для представления сотр
     }
 
     @Override
-    public String toString() { //Преобразование объекта в строку
+    public String toString() { // Преобразование объекта в строку
         if (isManager) {
-            return name + " начальник отдела " + department.getTitle();
+            return name + " начальник отдела " + department.getTitle(); // возврат для менеджера
         } else {
-            return name + " работает в отделе " + department.getTitle();
+            return name + " работает в отделе " + department.getTitle(); // возврат для обычного сотрудника
         }
     }
 }
