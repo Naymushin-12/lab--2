@@ -1,10 +1,10 @@
-public class Names { //альтернативная реализация класса для представления ФИО
-    // Поля класса
-    private String lastName;    // Фамилия
-    private String firstName;   // Имя
-    private String patronymic;  // Отчество
+public class Names { // альтернативная реализация класса для представления ФИО
 
-    public Names(String lastName, String firstName, String patronymic) { //основной конструктор с тремя параметрами
+    private String lastName; // Фамилия
+    private String firstName; // Имя
+    private String patronymic; // Отчество
+
+    public Names(String lastName, String firstName, String patronymic) { // основной конструктор с тремя параметрами
         // Проверяем что хотя бы одно имя не пустое
         String error = Validation.getNamesErrorMessage(lastName, firstName, patronymic);
         if (error != null) {
@@ -20,19 +20,19 @@ public class Names { //альтернативная реализация кла�
         }
     }
 
-    public Names(String firstName) { //конструктор только с именем
+    public Names(String firstName) { // конструктор только с именем
         this(null, firstName, null); // Вызов основного конструктора
     }
 
-    public Names(String lastName, String firstName) { //конструктор с фамилией и именем
+    public Names(String lastName, String firstName) { // конструктор с фамилией и именем
         this(lastName, firstName, null); // Вызов основного конструктора
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) {// принимаем значение фамилии
         this.lastName = lastName;
     }
 
-    public void setFirstName(String firstName) { //сет для имени с валидацией
+    public void setFirstName(String firstName) { // сет для имени с валидацией
         String error = Validation.getNameErrorMessage(firstName);
         if (error != null) {
             System.out.println("Ошибка имени: " + error);
@@ -59,7 +59,7 @@ public class Names { //альтернативная реализация кла�
     }
 
     @Override
-    public String toString() { //преобразование объекта в строку
+    public String toString() { // преобразование объекта в строку(для понятности)
         StringBuilder result = new StringBuilder();
 
         // Добавляем фамилию, если она есть (первой)
