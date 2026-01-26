@@ -1,9 +1,9 @@
-public class Department2 { //Улучшенная версия класса отдела с поддержкой связанного списка сотрудников
+public class Department2 { // Улучшенная версия класса отдела с поддержкой связанного списка сотрудников
     // Поля класса
-    private String title;              // Название отдела
-    private Employees2 firstEmployee;  // Первый сотрудник в отделе (начало списка)
+    private String title; // Название отдела
+    private Employees2 firstEmployee; // Первый сотрудник в отделе (начало списка)
 
-    public Department2(String title) { //Конструктор отдела
+    public Department2(String title) { // Конструктор отдела
         this.title = title;
     }
 
@@ -11,11 +11,11 @@ public class Department2 { //Улучшенная версия класса от
         return title;
     }
 
-    public Employees2 getFirstEmployee() {
+    public Employees2 getFirstEmployee() { // получаем первого сотрудника
         return firstEmployee;
     }
 
-    public void setFirstEmployee(Employees2 firstEmployee) {
+    public void setFirstEmployee(Employees2 firstEmployee) { // устанавливаем первого сотрудника
         this.firstEmployee = firstEmployee;
     }
 }
